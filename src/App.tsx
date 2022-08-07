@@ -1,13 +1,14 @@
 import React from "react";
 import { Outlet } from "react-router-dom";
 
+import Header from "src/components/organisms/Header";
+
 import "./App.css";
 
 function App() {
   return (
     <div className="App">
-      <header>Navbar</header>
-      <h1>모든 페이지컴포넌트를 wrapping 하는 컴포넌트</h1>
+      <Header />
       <Outlet />
       <footer>Footer</footer>
     </div>

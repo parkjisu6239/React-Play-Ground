@@ -23,12 +23,13 @@
     "no-console": "error",
     "comma-dangle": ["error", "never"],
     "max-len": ["warn", { "code": 80 }],
-    "arrow-body-style": ["error", "always"],
+    "arrow-body-style": ["error", "as-needed", { "requireReturnForObjectLiteral": true }],
     "quotes": ["error", "double", { "allowTemplateLiterals": true }],
     "import/prefer-default-export" : "off",
     "no-restricted-exports": "off",
 
     // TypeScript
+    "@typescript-eslint/strict-boolean-expressions": "off",
     "@typescript-eslint/consistent-type-imports": "error",
     "@typescript-eslint/explicit-member-accessibility": "off",
     "@typescript-eslint/indent": "off",
@@ -75,10 +76,10 @@
     "@typescript-eslint/promise-function-async": "error",
     "no-return-await": "off",
     "@typescript-eslint/return-await": "error",
-    "@typescript-eslint/strict-boolean-expressions": "error",
     "@typescript-eslint/switch-exhaustiveness-check": "error",
 
     // React
+    "react/button-has-type": "off",
     "react/jsx-filename-extension": ["warn", { "extensions": [".tsx"] }],
     "react/jsx-boolean-value": "warn",
     "react/jsx-curly-brace-presence": "warn",
@@ -94,6 +95,7 @@
     "react-hooks/exhaustive-deps": "warn",
     "react/destructuring-assignment": "off",
     "react/function-component-definition": "off",
+    "react/jsx-one-expression-per-line": "off",
 
     "import/extensions": [
       "error",
