@@ -20,7 +20,7 @@
   "plugins": ["react", "@typescript-eslint", "react-hooks", "functional"],
   "rules": {
     // General
-    "no-console": "error",
+    "no-console": "off",
     "comma-dangle": ["error", "never"],
     "max-len": ["warn", { "code": 80 }],
     "arrow-body-style": ["error", "as-needed", { "requireReturnForObjectLiteral": true }],
