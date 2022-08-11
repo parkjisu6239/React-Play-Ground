@@ -1,7 +1,9 @@
-import type { ChangeEvent, UIEvent } from "react";
+import type { ButtonHTMLAttributes, ChangeEvent, UIEvent } from "react";
 import React from "react";
 import { css } from "@emotion/css";
 import { lorem } from "./constants";
+
+import AwesomeButton from "./AwesomeButton";
 
 const refCss = css`
   display: grid;
@@ -26,22 +28,22 @@ const divWrapperCss = css`
   background-color: gray;
 `;
 
-const inpitWrapperCss = css`
-  border: 1px solid grey;
-`;
+const FancyButton = React.forwardRef(
+  (
+    props: React.PropsWithChildren<unknown>,
+    ref: React.ForwardedRef<HTMLButtonElement>
+  ) => (
+    <button ref={ref} className="FancyButton">{props.children}</button>
+  )
+);
 
 const UseRef = () => {
-  const [input, setInput] = React.useState("");
-  const inputRef = React.useRef<HTMLInputElement>(null);
-  const inputRef2 = React.useRef<HTMLInputElement | null>(null);
-
   const [scrollTop, setScrollTop] = React.useState(0);
   const divRef = React.useRef<HTMLDivElement>(null);
   const divRef2 = React.useRef<HTMLDivElement | null>(null);
 
-  const handleInput = (e: ChangeEvent<HTMLInputElement>) => {
-    setInput(e.target.value);
-  };
+  const buttonRef1 = React.useRef<HTMLButtonElement>(null);
+  const buttonRef2 = React.useRef<HTMLButtonElement>(null);
 
   const handleScroll = (e: React.UIEvent<HTMLDivElement>) => {
     setScrollTop(e.currentTarget.scrollTop);
@@ -94,22 +96,8 @@ const UseRef = () => {
         </div>
       </section>
       <section>
-        <div className={inpitWrapperCss}>
-          <input id="refInput" ref={inputRef} />
-          <p>{inputRef.current?.value}</p>
-        </div>
-        <div className={inpitWrapperCss}>
-          <input id="refInput2" ref={(ref) => { inputRef2.current = ref; }} />
-          <p>{inputRef2.current?.value}</p>
-        </div>
-        <div className={inpitWrapperCss}>
-          <input
-            id="JustInput"
-            value={input}
-            onChange={handleInput}
-          />
-          <p>{input}</p>
-        </div>
+        <AwesomeButton ref={buttonRef1}>buttonRef1</AwesomeButton>
+        <FancyButton ref={buttonRef2}>buttonRef2</FancyButton>
       </section>
     </div>
   );
