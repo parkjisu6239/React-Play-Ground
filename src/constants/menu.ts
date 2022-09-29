@@ -24,6 +24,12 @@ const menu = [
     path: "/use-ref",
     name: "useRef",
     component: Page.UseRefPage
+  },
+  {
+    id: "layout-effect",
+    path: "/layout-effect",
+    name: "layoutEffect",
+    component: Page.LayoutEffectPage
   }
 ];
 
