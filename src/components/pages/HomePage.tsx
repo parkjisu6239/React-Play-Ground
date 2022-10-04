@@ -1,5 +1,5 @@
 import React from "react";
-import { Usage } from "src/components/molecules/Accordion/Usage";
+import Usage from "src/components/molecules/Accordion/Usage";
 
 function HomePage() {
   return (

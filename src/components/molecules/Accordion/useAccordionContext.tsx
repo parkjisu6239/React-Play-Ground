@@ -2,12 +2,12 @@ import React from "react";
 
 interface AccordionContextType {
   expanded: boolean;
-  setExpanded: (expanded: boolean) => void
+  onChange: () => void
 }
 
 const defaultValue = {
   expanded: false,
-  setExpanded: () => null
+  onChange: () => null
 };
 
 const AccordionContext = React.createContext<AccordionContextType>(
